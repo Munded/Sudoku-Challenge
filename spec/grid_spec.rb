@@ -1,12 +1,28 @@
-# describe 'grid' do
-# 	xit 'initialises with a 9x9 grid' do
-# 		grid = Grid.new
-# 		expect(grid[0]).to eq {a1: 0, a2: 0, a3: 0, a4: 0, a5: 0, a6: 0, a7: 0, a8: 0, a9: 0 }
-# 	end
+require 'board'
 
-# 	xit 'can place a number' do
-# 		grid = grid.new
-# 		grid.place 1
-# 		expect(grid).to eq []
-# 	end
-# end
+describe Board do
+
+	attr_reader :grid
+
+	it 'has to initialize with a grid' do
+	 	expect { Board.new(grid: "grid") }.not_to raise_error
+	end
+
+	it 'initialises with 9 rows' do
+		board = Board.new
+		expect(board.grid.count).to eq 9
+	end
+
+	it 'initialises with a 9 slots in each row' do
+		board = Board.new
+		board.grid.each do |row|
+			expect(row.count).to eq 9
+		end
+	end
+
+	# xit 'can place a number' do
+	# 	grid = grid.new
+	# 	grid.place 1
+	# 	expect(grid).to eq []
+	# end
+end
