@@ -1,3 +1,5 @@
+require 'cell'
+
 class Board
 
 	attr_reader :grid
@@ -10,8 +12,8 @@ class Board
 		grid[y][x]
 	end
 
-	def set_value x, y, set_value
-		get_cell(x, y).value = value
+	def set_value x, y, new_value
+		get_cell(x, y).value = new_value
 	end
 
 	private 

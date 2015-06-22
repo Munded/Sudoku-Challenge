@@ -31,9 +31,10 @@ describe Board do
 	end
 
 	it 'can set the value of a cell by (x,y) coordinate' do
-		board = Board.new grid: grid_3x3
-		# mocked_grid = [['_', '_', '_',], [ '_', '7', '_'], [ cell, '_', '_',]]
+		Cell = Struct.new(:value)
+		mocked_grid = [['_', '_', '_',], [ '_', '7', '_'], [ Cell.new('_'), '_', '_',]]
+		board = Board.new grid: mocked_grid
 		board.set_value 0, 2, '6'
-		expect(board.get_cell(0, 2)).to eq '6'
+		expect(board.get_cell(0, 2).value).to eq '6'
 	end
 end
