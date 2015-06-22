@@ -8,8 +8,8 @@ describe Cell do
 	end
 
 	it('can be initialized with a value if specified') do
-		cell = Cell.new value: 7
-		expect(cell.value).to eq 7
+		cell = Cell.new value: '7'
+		expect(cell.value).to eq '7'
 	end
 
 
